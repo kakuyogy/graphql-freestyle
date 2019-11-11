@@ -6,7 +6,7 @@ exports.fetch = (args) => {
     query,
     ...variables
   } = args.params;
-  axios[args.method](args.url, {
+  return axios[args.method](args.url, {
     query,
     variables,
   }).then(res => res.data)

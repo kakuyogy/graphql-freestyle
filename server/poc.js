@@ -76,7 +76,7 @@ const meta = {
   mutation: "createPerson",
   type: 'Person',
   resolve(_, person) {
-    console.log("person: ", person);
+    console.log("create person: ", person);
     return person;
   },
   schemas: {
@@ -129,8 +129,6 @@ Object.keys(meta.schemas).forEach((name) => {
 });
 
 mutationObjectType.fields[meta.mutation] = buildFormMutation(meta);
-
-console.log(mutationObjectType.fields[meta.mutation])
 
 export const schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType(queryObjectType),
